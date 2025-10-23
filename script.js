@@ -12,7 +12,7 @@ function showPage(id) {
   // Fecha o menu mobile (se aberto)
   document.querySelector('.nav-links')?.classList.remove('active');
 
-  // Atualiza a URL sem causar recarregamento ou conflito
+  // Atualiza a URL sem recarregar e sem pulo de scroll
   history.replaceState(null, '', '#' + id);
 }
 
@@ -31,7 +31,8 @@ function toggleLanguageMenu() {
 
 function changeLanguage(code) {
   const flags = { en: '🇺🇸', pt: '🇧🇷', es: '🇪🇸', ru: '🇷🇺', hi: '🇮🇳', zh: '🇨🇳', ja: '🇯🇵' };
-  document.getElementById('currentFlag').textContent = flags[code] || '🏳️';
+  const flagEl = document.getElementById('currentFlag');
+  if (flagEl) flagEl.textContent = flags[code] || '🏳️';
   toggleLanguageMenu();
 }
 
@@ -69,18 +70,24 @@ window.addEventListener('scroll', function() {
    🔻 SUPORTE A HASH DIRETA
    ============================ */
 
-// 1️⃣ Abre direto a seção se a URL tiver hash (#whitepaper, #roadmap, etc)
+// Abre diretamente a seção se a URL tiver hash (#whitepaper, #roadmap, etc) — case-insensitive
 window.addEventListener('load', () => {
-  if (window.location.hash) {
-    const pageId = window.location.hash.slice(1);
-    if (document.getElementById(pageId)) showPage(pageId);
+  const raw = window.location.hash ? window.location.hash.slice(1) : 'home';
+  const pageId = (raw || 'home').toLowerCase();
+  if (document.getElementById(pageId)) {
+    showPage(pageId);
   } else if (document.getElementById('home')) {
-    showPage('home'); // abre a home por padrão
+    showPage('home'); // fallback
   }
 });
 
-// 2️⃣ Permite usar Voltar / Avançar do navegador sem quebrar
+// Suporta Voltar/Avançar do navegador — case-insensitive
 window.addEventListener('hashchange', () => {
-  const pageId = window.location.hash.slice(1) || 'home';
-  if (document.getElementById(pageId)) showPage(pageId);
+  const raw = window.location.hash ? window.location.hash.slice(1) : 'home';
+  const pageId = (raw || 'home').toLowerCase();
+  if (document.getElementById(pageId)) {
+    showPage(pageId);
+  } else if (document.getElementById('home')) {
+    showPage('home');
+  }
 });
