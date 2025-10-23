@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=/#home">
+</head>
+<body style="background:#000;color:#fff;font-family:'Segoe UI',sans-serif;text-align:center;padding-top:20vh;">
+  <p>Redirecting…</p>
+
+  <script>
+    // Pega o caminho atual (ex: /whitepaper)
+    var path = (location.pathname || '/').replace(/^\/+/, '').replace(/\/+$/, '');
+    // Mantém query e hash se existirem
+    var query = location.search || '';
+    var hash = location.hash || '';
+    
+    if (path && path.toLowerCase() !== 'index.html') {
+      // Redireciona para a hash (ex: /#whitepaper)
+      location.replace('/#' + path.toLowerCase() + query + hash);
+    } else {
+      // Se for algo não identificado, vai pra home
+      location.replace('/#home');
+    }
+  </script>
+</body>
+</html>
