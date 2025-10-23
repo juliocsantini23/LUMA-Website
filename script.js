@@ -54,3 +54,25 @@ window.addEventListener('scroll', function(){
   if(priceEl) priceEl.textContent = '$0.000001076';
   if(changeEl) { changeEl.textContent = '+0.00%'; changeEl.classList.remove('loading'); changeEl.classList.add('positive'); }
 })();
+
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    const pageId = window.location.hash.substring(1); 
+    if (typeof showPage === "function") {
+      showPage(pageId);
+    }
+  }
+});
+window.addEventListener('hashchange', () => {
+  const pageId = window.location.hash.slice(1) || 'home';
+  if (document.getElementById(pageId)) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+    document.querySelectorAll('.nav-links li').forEach(li => li.classList.remove('active'));
+    document.querySelectorAll('.nav-links li').forEach(li => {
+      if(li.textContent.trim().toLowerCase() === pageId) li.classList.add('active');
+    });
+  }
+});
+if (!window.location.hash && document.getElementById('home')) {
+}
