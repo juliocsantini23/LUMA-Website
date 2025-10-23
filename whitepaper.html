@@ -9,14 +9,13 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="/estilos.css">
 
-  <!-- GARANTIA: antes de carregar seu script.js, definimos a hash para #whitepaper
-       para que o SPA abra diretamente a seção correta -->
+  <!-- Força a hash #whitepaper antes do SPA carregar -->
   <script>
     (function(){
       if (!location.hash || location.hash.toLowerCase() !== '#whitepaper') {
         history.replaceState(null, '', '#whitepaper');
       }
-      // função do botão de download usada no HTML abaixo
+      // função do botão de download usada no HTML
       window.downloadWhitepaper = function(){
         window.open('/whitepaper/LumaChain-Whitepaper.pdf', '_blank', 'noopener');
       };
@@ -24,7 +23,7 @@
   </script>
   <script defer src="/script.js"></script>
 
-  <!-- Fallback mínimo (mantém o visual caso estilos.css ainda não tenha carregado) -->
+  <!-- Fallback mínimo para manter visual caso o CSS demore -->
   <style>
     body{background:linear-gradient(135deg,#000 0%,#1a1a1a 50%,#2d2d2d 100%);color:#fff;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
     .navbar{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);border-bottom:1px solid rgba(192,192,192,.28)}
@@ -41,7 +40,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR — mesmo visual, links vão para as páginas reais do site -->
+  <!-- NAVBAR — mesmo visual, links pro site real -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo"><a href="/" style="color:#fff;text-decoration:none">LumaChain</a></div>
@@ -61,11 +60,11 @@
     </div>
   </nav>
 
-  <!-- SUA SEÇÃO WHITEPAPER (conteúdo oficial que você enviou) -->
+  <!-- === CONTEÚDO QUE VOCÊ ENVIOU (COMPLETO) === -->
   <div id="whitepaper" class="page active">
     <div class="content-section">
       <h1>📄 LUMA Whitepaper (Version 1.2)</h1>
-
+      
       <!-- Core Vision Quote -->
       <div style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.1), rgba(255, 255, 255, 0.05)); border: 1px solid rgba(192, 192, 192, 0.3); border-radius: 20px; padding: 3rem 2rem; margin: 3rem 0; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(15px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(192, 192, 192, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(192, 192, 192, 0.05) 50%, transparent 70%); pointer-events: none;"></div>
@@ -76,9 +75,6 @@
       <div style="text-align: center; margin: 3rem 0;">
         <button class="btn btn-primary" onclick="downloadWhitepaper()">📥 Download Whitepaper</button>
       </div>
-
-      <!-- ======= CONTEÚDO QUE VOCÊ ENVIOU (mantido 1:1) ======= -->
-      <!-- (A partir daqui, deixei exatamente o seu HTML original; pode editar à vontade) -->
 
       <h2>🌍 Introduction</h2>
       <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'">
@@ -91,24 +87,301 @@
       <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'">
         <p style="margin-bottom: 2rem;">LUMA was founded on three unshakable principles:</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'"><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">1️⃣</div><strong style="color: #ffffff;">Transparency:</strong> All movements are traceable on the blockchain.</div>
-          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'"><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">2️⃣</div><strong style="color: #ffffff;">Purpose:</strong> Financial systems must serve people, not speculation.</div>
-          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'"><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">3️⃣</div><strong style="color: #ffffff;">Integrity:</strong> Trust is built with proof — not promises.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">1️⃣</div><strong style="color: #ffffff;">Transparency:</strong> All movements are traceable on the blockchain.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">2️⃣</div><strong style="color: #ffffff;">Purpose:</strong> Financial systems must serve people, not speculation.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><div style="font-size: 1.5rem; margin-bottom: 0.5rem;">3️⃣</div><strong style="color: #ffffff;">Integrity:</strong> Trust is built with proof — not promises.</div>
         </div>
         <p style="color: #b8b8b8; font-style: italic; text-align: center; margin-top: 2rem; font-size: 1.1rem;">"We believe in a world where finance, technology, and ethics coexist."</p>
       </div>
 
-      <!-- (todo o restante do conteúdo que você colou acima segue sem alterações) -->
-      <!-- ⚠️ Para manter a resposta curta, não repeti aqui inteiro. No seu arquivo,
-           cole o restante exatamente como você enviou, a partir de:
-           <h2>⚙️ Technology Overview</h2> ... até o final. -->
-      
-      <!-- ▼▼ COLE AQUI o restante do seu HTML do whitepaper ▼▼ -->
-      <!-- ... (todo o bloco que você me enviou, do Technology Overview até Final Message) ... -->
-      <!-- ▲▲ COLE AQUI o restante do seu HTML do whitepaper ▲▲ -->
+      <h2>⚙️ Technology Overview</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 20px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div><strong style="color: #c0c0c0;">Network:</strong> <span style="color: #ffffff;">Polygon (MATIC)</span></div>
+          <div><strong style="color: #c0c0c0;">Token Standard:</strong> <span style="color: #ffffff;">ERC-20</span></div>
+          <div><strong style="color: #c0c0c0;">Decimals:</strong> <span style="color: #ffffff;">18</span></div>
+          <div><strong style="color: #c0c0c0;">Total Supply:</strong> <span style="color: #ffffff; font-weight: bold;">300,000,000 LUMA</span></div>
+        </div>
 
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(192, 192, 192, 0.2);">
+          <strong style="color: #c0c0c0;">Contract Address:</strong>
+          <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 10px; margin: 0.5rem 0; word-break: break-all; font-size: 0.9rem; color: #ffffff;">
+            0x453453096e669a8a48772287210098faa55bd64b
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(192, 192, 192, 0.2);">
+          <strong style="color: #c0c0c0;">Live Supply API:</strong>
+          <div style="margin-top: 0.5rem;">
+            <a href="https://sweet-kringle-898f12.netlify.app/supply.json" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem; word-break: break-all; transition: all 0.3s ease; display: inline-block; background: rgba(0, 0, 0, 0.3); padding: 0.5rem 1rem; border-radius: 8px;" onmouseover="this.style.color='#c0c0c0'; this.style.background='rgba(192, 192, 192, 0.1)'" onmouseout="this.style.color='#ffffff'; this.style.background='rgba(0, 0, 0, 0.3)'">https://sweet-kringle-898f12.netlify.app/supply.json</a>
+          </div>
+        </div>
+
+        <p style="color: #b8b8b8; font-style: italic; text-align: center; margin-top: 2rem;">Every smart contract is verified and immutable, ensuring no minting, no burning, and no hidden permissions.</p>
+      </div>
+
+      <h2>💠 Tokenomics Overview</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px); overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; color: #ffffff;">
+          <thead>
+            <tr style="border-bottom: 2px solid rgba(192, 192, 192, 0.3);">
+              <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Category</th>
+              <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Allocation</th>
+              <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Lock Period</th>
+              <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+              <td style="padding: 1rem;">Public Circulation & Liquidity</td>
+              <td style="padding: 1rem;">70% (210,000,000 LUMA)</td>
+              <td style="padding: 1rem;">Gradual release</td>
+              <td style="padding: 1rem;">Market liquidity and trading stability</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+              <td style="padding: 1rem;">Founders & Core Team</td>
+              <td style="padding: 1rem;">20% (60,000,000 LUMA)</td>
+              <td style="padding: 1rem;">Locked 12 months</td>
+              <td style="padding: 1rem;">Development and operations</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem;">Treasury</td>
+              <td style="padding: 1rem;">10% (30,000,000 LUMA)</td>
+              <td style="padding: 1rem;">Locked 6 months</td>
+              <td style="padding: 1rem;">Ecosystem growth & partnerships</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>🔒 Locked Wallets</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'>
+          <h4 style="color: #c0c0c0; margin-bottom: 1rem;">Team Wallet:</h4>
+          <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0x6D5dAbdA8d16484A7026DE4d9229beAed59fF7b3</div>
+          <h4 style="color: #c0c0c0; margin-bottom: 1rem; margin-top: 1rem;">Team Timelock:</h4>
+          <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0xeb92f951f5a486e8d65569e737baf5b5fd494284</div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'>
+          <h4 style="color: #c0c0c0; margin-bottom: 1rem;">Treasury Wallet:</h4>
+          <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0x9853A0B88Fce5DD672678b5986d96AdD4bD22288</div>
+          <h4 style="color: #c0c0c0; margin-bottom: 1rem; margin-top: 1rem;">Treasury Timelock:</h4>
+          <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0xE022379FbA9E3CE816DC973494791072b3ebE5C9</div>
+        </div>
+      </div>
+
+      <h2>💧 Liquidity Pool</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+          <div><strong style="color: #c0c0c0;">Exchange:</strong> <span style="color: #ffffff;">SushiSwap (Polygon)</span></div>
+          <div><strong style="color: #c0c0c0;">Pair:</strong> <span style="color: #ffffff;">LUMA / USDC</span></div>
+          <div><strong style="color: #c0c0c0;">Fee:</strong> <span style="color: #ffffff;">0.3%</span></div>
+          <div><strong style="color: #c0c0c0;">Target Ratio:</strong> <span style="color: #ffffff;">6–7% of MarketCap</span></div>
+        </div>
+      </div>
+
+      <h2>🔐 Security & Transparency</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'>
+        <p style="margin-bottom: 2rem;">LUMA's foundation is built on timelocked smart contracts and public verification.</p>
+        <p style="margin-bottom: 2rem;">We maintain open access to all critical addresses and live supply data:</p>
+        
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin: 1rem 0; padding-left: 2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #c0c0c0;">🔗</span>
+            <strong>Polygon Contract:</strong> <a href="https://polygonscan.com/token/0x453453096e669a8a48772287210098faa55bd64b" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">View Here</a>
+          </li>
+          <li style="margin: 1rem 0; padding-left: 2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #c0c0c0;">🔒</span>
+            <strong>Team Lock:</strong> <a href="https://polygonscan.com/address/0xeb92f951f5a486e8d65569e737baf5b5fd494284" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">Polygon Timelock</a>
+          </li>
+          <li style="margin: 1rem 0; padding-left: 2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #c0c0c0;">🏛️</span>
+            <strong>Treasury Lock:</strong> <a href="https://polygonscan.com/address/0xE022379FbA9E3CE816DC973494791072b3ebE5C9" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">Polygon Timelock</a>
+          </li>
+          <li style="margin: 1rem 0; padding-left: 2rem; position: relative;">
+            <span style="position: absolute; left: 0; color: #c0c0c0;">📊</span>
+            <strong>API (Circulating & Total Supply):</strong> <a href="https://sweet-kringle-898f12.netlify.app/supply.json" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">Supply JSON</a>
+          </li>
+        </ul>
+
+        <p style="color: #b8b8b8; font-style: italic; text-align: center; margin-top: 2rem; font-size: 1.1rem;">"Transparency is not an option — it's our foundation."</p>
+      </div>
+
+      <h2>🚀 Growth Phases & Expansion</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <p style="margin-bottom: 2rem;">LUMA's evolution follows a strategic roadmap of expansion and utility, aligned with real milestones and value creation.</p>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; color: #ffffff; min-width: 800px;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(192, 192, 192, 0.3);">
+                <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Phase</th>
+                <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Price Range</th>
+                <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Milestone</th>
+                <th style="padding: 1rem; text-align: left; color: #c0c0c0;">Core Focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">1️⃣ Foundation</td>
+                <td style="padding: 1rem;">$0.000001 → $0.01</td>
+                <td style="padding: 1rem;">Initial liquidity and stability</td>
+                <td style="padding: 1rem;">Build trust and verifiable presence</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">2️⃣ Consolidation</td>
+                <td style="padding: 1rem;">$0.01 → $1</td>
+                <td style="padding: 1rem;">Market adoption & ecosystem expansion</td>
+                <td style="padding: 1rem;">Community building</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">3️⃣ Sustained Growth</td>
+                <td style="padding: 1rem;">$1 → $5</td>
+                <td style="padding: 1rem;">Institutional partnerships</td>
+                <td style="padding: 1rem;">Strengthen credibility</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">4️⃣ Network Development</td>
+                <td style="padding: 1rem;">$5 → $10</td>
+                <td style="padding: 1rem;">Launch LumaNetwork</td>
+                <td style="padding: 1rem;">Create the native blockchain layer</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">5️⃣ Blockchain Launch</td>
+                <td style="padding: 1rem;">$10+</td>
+                <td style="padding: 1rem;">Mainnet with staking & nodes</td>
+                <td style="padding: 1rem;">Decentralization milestone</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">6️⃣ LumaPay Development</td>
+                <td style="padding: 1rem;">$15 → $25</td>
+                <td style="padding: 1rem;">Global payment and debit system</td>
+                <td style="padding: 1rem;">Financial infrastructure</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(192, 192, 192, 0.1);">
+                <td style="padding: 1rem;">7️⃣ RealFi Tokenization</td>
+                <td style="padding: 1rem;">$25 → $50</td>
+                <td style="padding: 1rem;">Real estate & enterprise tokenization</td>
+                <td style="padding: 1rem;">Real-world adoption</td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem;">8️⃣ LUX Token (Dividends)</td>
+                <td style="padding: 1rem;">$50 → $100</td>
+                <td style="padding: 1rem;">Governance and annual returns</td>
+                <td style="padding: 1rem;">Regulated utility growth</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>🌐 Future Ecosystem</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'>
+        <p style="margin-bottom: 2rem;">Beyond finance, LUMA aims to shape a decentralized, ethical economy.</p>
+        <p style="margin-bottom: 2rem; font-weight: 600; color: #ffffff;">The ecosystem will expand to include:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><strong style="color: #ffffff;">LumaNetwork:</strong> The native blockchain of LUMA.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><strong style="color: #ffffff;">LumaPay:</strong> Blockchain-powered payment solutions and debit cards.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><strong style="color: #ffffff;">Luma RealFi:</strong> Tokenization of real assets and property.</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><strong style="color: #ffffff;">LUX Token:</strong> Governance and dividend token (regulated model).</div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'><strong style="color: #ffffff;">LumaSoul:</strong> Humanitarian blockchain programs for global aid.</div>
+        </div>
+
+        <p style="color: #b8b8b8; font-style: italic; text-align: center; margin-top: 2rem; font-size: 1.1rem;">"From finance to humanity — one ecosystem, one purpose."</p>
+      </div>
+
+      <h2>🧠 Governance and DAO</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; transition: all 0.3s ease; backdrop-filter: blur(10px);" onmouseover="this.style.borderColor='rgba(192, 192, 192, 0.4)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(192, 192, 192, 0.2)'; this.style.transform='translateY(0)'>
+        <p style="margin-bottom: 2rem;">LUMA is developing a DAO (Decentralized Autonomous Organization) to transfer governance from the founding team to the community.</p>
+        <p style="margin-bottom: 2rem;">Token holders will vote on upgrades, partnerships, and treasury allocations.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'>
+            <div style="font-size: 2rem; margin-bottom: 1rem;">🗳️</div>
+            <strong style="color: #ffffff;">Community Voting</strong>
+            <p style="color: #b8b8b8; margin-top: 0.5rem; font-size: 0.9rem;">Democratic decision-making process</p>
+          </div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'>
+            <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+            <strong style="color: #ffffff;">Partnership Decisions</strong>
+            <p style="color: #b8b8b8; margin-top: 0.5rem; font-size: 0.9rem;">Strategic alliance approvals</p>
+          </div>
+          <div style="background: rgba(192, 192, 192, 0.1); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 10px; padding: 1.5rem; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(192, 192, 192, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(192, 192, 192, 0.2)'>
+            <div style="font-size: 2rem; margin-bottom: 1rem;">💰</div>
+            <strong style="color: #ffffff;">Treasury Management</strong>
+            <p style="color: #b8b8b8; margin-top: 0.5rem; font-size: 0.9rem;">Fund allocation oversight</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>📈 Market Information</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div><strong style="color: #c0c0c0;">Current MarketCap:</strong> <span style="color: #ffffff;">Publicly verifiable via DEX and APIs</span></div>
+          <div><strong style="color: #c0c0c0;">Exchange Listing:</strong> <span style="color: #ffffff;">SushiSwap (Polygon)</span></div>
+          <div><strong style="color: #c0c0c0;">CMC Tracker:</strong> <span style="color: #ffffff;">CoinMarketCap</span></div>
+        </div>
+      </div>
+
+      <h2>⚖️ Disclaimers</h2>
+      <div style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <p style="margin-bottom: 1.5rem; color: #ffffff;">LUMA does not guarantee financial returns.</p>
+        <p style="margin-bottom: 2rem; color: #ffffff;">The project operates under principles of transparency, accountability, and compliance, following international standards of crypto governance.</p>
+        <div style="background: rgba(0, 0, 0, 0.3); border-radius: 10px; padding: 1.5rem; text-align: center;">
+          <p style="color: #ffc107; font-weight: 600; font-size: 1.1rem; margin: 0; font-style: italic;">"We build trust through transparency, not speculation."</p>
+        </div>
+      </div>
+
+      <h2>🪙 Quick Links</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(192, 192, 192, 0.2); border-radius: 15px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          <div>
+            <strong style="color: #c0c0c0;">Smart Contract:</strong>
+            <div style="margin-top: 0.5rem;">
+              <a href="https://polygonscan.com/token/0x453453096e669a8a48772287210098faa55bd64b" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">PolygonScan</a>
+            </div>
+          </div>
+          <div>
+            <strong style="color: #c0c0c0;">Liquidity Pool:</strong>
+            <div style="margin-top: 0.5rem;">
+              <a href="https://dexscreener.com/polygon/0xEbAd4840bf2a7eEEB64918Bb71F48ab9db4400cE" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem; transition: all 0.3s ease;" onmouseover="this.style.color='#c0c0c0'" onmouseout="this.style.color='#ffffff'">SushiSwap LUMA/USDC</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(192, 192, 192, 0.2);">
+          <strong style="color: #c0c0c0;">Locked Wallets:</strong>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div>
+              <strong style="color: #c0c0c0; font-size: 0.9rem;">Team:</strong>
+              <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0x6D5dAbdA8d16484A7026DE4d9229beAed59fF7b3</div>
+            </div>
+            <div>
+              <strong style="color: #c0c0c0; font-size: 0.9rem;">Treasury:</strong>
+              <div style="font-family: 'Courier New', monospace; background: rgba(0, 0, 0, 0.3); padding: 0.5rem; border-radius: 8px; margin: 0.5rem 0; word-break: break-all; font-size: 0.8rem; color: #ffffff;">0x9853A0B88Fce5DD672678b5986d96AdD4bD22288</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(192, 192, 192, 0.2);">
+          <strong style="color: #c0c0c0;">Supply Data API:</strong>
+          <div style="margin-top: 0.5rem;">
+            <a href="https://sweet-kringle-898f12.netlify.app/supply.json" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.9rem; word-break: break-all; transition: all 0.3s ease; display: inline-block; background: rgba(0, 0, 0, 0.3); padding: 0.5rem 1rem; border-radius: 8px;" onmouseover="this.style.color='#c0c0c0'; this.style.background='rgba(192, 192, 192, 0.1)'" onmouseout="this.style.color='#ffffff'; this.style.background='rgba(0, 0, 0, 0.3)'">https://sweet-kringle-898f12.netlify.app/supply.json</a>
+          </div>
+        </div>
+      </div>
+
+      <h2>✨ Final Message</h2>
+      <div style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.15), rgba(255, 255, 255, 0.08)); border: 2px solid rgba(192, 192, 192, 0.4); border-radius: 20px; padding: 3rem 2rem; margin: 3rem 0; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(15px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);" onmouseover="this.style.transform='translateY(-8px) scale(1.02)'; this.style.boxShadow='0 25px 50px rgba(192, 192, 192, 0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='none'">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent 30%, rgba(192, 192, 192, 0.1) 50%, transparent 70%); pointer-events: none;"></div>
+        <p style="font-size: 1.3rem; color: #ffffff; line-height: 1.6; margin-bottom: 1.5rem; position: relative; z-index: 2;">LUMA is not just a token — it's the beginning of a decentralized legacy.</p>
+        <p style="font-size: 1.4rem; font-weight: 600; color: #c0c0c0; position: relative; z-index: 2;">A movement built on truth, transparency, and transformation.</p>
+      </div>
     </div>
   </div>
+  <!-- === FIM DO CONTEÚDO COMPLETO === -->
 
   <footer style="text-align:center;color:#a7a7a7;margin:48px 0 36px">
     © 2024 LumaChain. All rights reserved.
