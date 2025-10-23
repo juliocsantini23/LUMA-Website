@@ -1738,42 +1738,142 @@
     </div>
     
     <!-- Security Page -->
-    <div id="security" class="page">
-        <div class="content-section">
-            <h1>🔒 Security</h1>
-            
-            <div class="security-features">
-                <div class="security-card">
-                    <div class="security-icon">🛡️</div>
-                    <h4>Smart Contract Audits</h4>
-                    <p>Our smart contracts have been audited by leading security firms to ensure maximum protection of user funds.</p>
-                </div>
-                
-                <div class="security-card">
-                    <div class="security-icon">🔐</div>
-                    <h4>Multi-Signature Wallets</h4>
-                    <p>All treasury funds are secured using multi-signature wallets requiring multiple approvals for transactions.</p>
-                </div>
-                
-                <div class="security-card">
-                    <div class="security-icon">⚡</div>
-                    <h4>Real-time Monitoring</h4>
-                    <p>24/7 monitoring systems track all network activity to detect and prevent potential security threats.</p>
-                </div>
-            </div>
-            
-            <h2>Security Measures</h2>
-            <ul style="margin: 1rem 0; padding-left: 2rem;">
-                <li>Regular security audits by third-party firms</li>
-                <li>Bug bounty program for responsible disclosure</li>
-                <li>Decentralized governance for protocol upgrades</li>
-                <li>Emergency pause mechanisms for critical situations</li>
-                <li>Insurance coverage for smart contract risks</li>
-            </ul>
-        </div>
+    <!-- Security & Transparency Page -->
+<div id="security" class="page">
+  <div class="content-section">
+    <h1>🛡️ Security & Transparency</h1>
+
+    <!-- Intro / Statement -->
+    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(192,192,192,0.25); border-radius: 18px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+      <p style="color:#eaeaea; line-height:1.7; margin:0;">
+        At <strong>LUMA</strong>, transparency and integrity are non-negotiable values. All token allocations, liquidity locks, and treasury funds are verifiable on-chain through PolygonScan. Our smart contract was deployed without minting privileges and with fixed supply, ensuring fairness and long-term stability.
+      </p>
     </div>
-    
-    <!-- Roadmap Page -->
+
+    <!-- Contract Overview (Cards) -->
+    <h2 style="margin-top:2rem;">🔐 Contract Overview</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; margin:1.25rem 0;">
+      <!-- Token Contract -->
+      <div style="background: rgba(192,192,192,0.08); border:1px solid rgba(192,192,192,0.25); border-radius:16px; padding:1.25rem; transition:.25s; backdrop-filter: blur(8px);" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(192,192,192,0.45)'" onmouseout="this.style.transform=''; this.style.borderColor='rgba(192,192,192,0.25)'">
+        <div style="font-weight:700; color:#fff; margin-bottom:.35rem;">Token Contract (LUMA)</div>
+        <div style="color:#c0c0c0; font-size:.95rem; margin-bottom:1rem;">Verified smart contract on Polygon</div>
+        <a href="https://polygonscan.com/token/0x453453096e669a8a48772287210098faa55bd64b" target="_blank" rel="noopener noreferrer"
+           style="display:inline-block; padding:.6rem 1rem; border-radius:999px; text-decoration:none; color:#000; background:linear-gradient(135deg,#c0c0c0,#ffffff); font-weight:700;">
+           View on PolygonScan
+        </a>
+      </div>
+
+      <!-- Liquidity Pool -->
+      <div style="background: rgba(192,192,192,0.08); border:1px solid rgba(192,192,192,0.25); border-radius:16px; padding:1.25rem; transition:.25s; backdrop-filter: blur(8px);" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(192,192,192,0.45)'" onmouseout="this.style.transform=''; this.style.borderColor='rgba(192,192,192,0.25)'">
+        <div style="font-weight:700; color:#fff; margin-bottom:.35rem;">Liquidity Pool (SushiSwap)</div>
+        <div style="color:#c0c0c0; font-size:.95rem; margin-bottom:1rem;">LUMA/USDC Pair Contract</div>
+        <a href="https://dexscreener.com/polygon/0xEbAd4840bf2a7eEEB64918Bb71F48ab9db4400cE" target="_blank" rel="noopener noreferrer"
+           style="display:inline-block; padding:.6rem 1rem; border-radius:999px; text-decoration:none; color:#000; background:linear-gradient(135deg,#c0c0c0,#ffffff); font-weight:700;">
+           View Pool
+        </a>
+      </div>
+
+      <!-- Supply API -->
+      <div style="background: rgba(192,192,192,0.08); border:1px solid rgba(192,192,192,0.25); border-radius:16px; padding:1.25rem; transition:.25s; backdrop-filter: blur(8px);" onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(192,192,192,0.45)'" onmouseout="this.style.transform=''; this.style.borderColor='rgba(192,192,192,0.25)'">
+        <div style="font-weight:700; color:#fff; margin-bottom:.35rem;">Circulating & Total Supply API</div>
+        <div style="color:#c0c0c0; font-size:.95rem; margin-bottom:1rem;">Live supply tracking</div>
+        <a href="https://sweet-kringle-898f12.netlify.app/supply.json" target="_blank" rel="noopener noreferrer"
+           style="display:inline-block; padding:.6rem 1rem; border-radius:999px; text-decoration:none; color:#000; background:linear-gradient(135deg,#c0c0c0,#ffffff); font-weight:700;">
+           View Data
+        </a>
+      </div>
+    </div>
+
+    <!-- Locked Wallets -->
+    <h2 style="margin-top:2rem;">💼 Locked Wallets</h2>
+    <div style="overflow:auto; border:1px solid rgba(192,192,192,0.25); border-radius:16px; background:rgba(255,255,255,0.04); backdrop-filter:blur(8px);">
+      <table style="width:100%; border-collapse:collapse; min-width:760px; color:#fff;">
+        <thead>
+          <tr style="background:linear-gradient(135deg,#4a4a4a,#5a5a5a);">
+            <th style="text-align:left; padding:14px; color:#eaeaea;">Purpose</th>
+            <th style="text-align:left; padding:14px; color:#eaeaea;">Address</th>
+            <th style="text-align:left; padding:14px; color:#eaeaea;">Lock Contract</th>
+            <th style="text-align:left; padding:14px; color:#eaeaea;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-top:1px solid rgba(255,255,255,0.06);">
+            <td style="padding:14px; color:#cfcfcf;">Team & Development</td>
+            <td style="padding:14px; font-family:'Courier New',monospace;">
+              <a href="https://polygonscan.com/address/0x6D5dAbdA8d16484A7026DE4d9229beAed59fF7b3" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none;">0x6D5d...F7b3</a>
+            </td>
+            <td style="padding:14px; font-family:'Courier New',monospace;">
+              <a href="https://polygonscan.com/address/0xeb92f951f5a486e8d65569e737baf5b5fd494284" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none;">0xeb92...4284</a>
+            </td>
+            <td style="padding:14px; color:#9ee49e;">🔒 Locked (1 Year)</td>
+          </tr>
+          <tr style="border-top:1px solid rgba(255,255,255,0.06);">
+            <td style="padding:14px; color:#cfcfcf;">Treasury Wallet</td>
+            <td style="padding:14px; font-family:'Courier New',monospace;">
+              <a href="https://polygonscan.com/address/0x9853A0B88Fce5DD672678b5986d96AdD4bD22288" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none;">0x9853...2288</a>
+            </td>
+            <td style="padding:14px; font-family:'Courier New',monospace;">
+              <a href="https://polygonscan.com/address/0xE022379FbA9E3CE816DC973494791072b3ebE5C9" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none;">0xE022...5C9</a>
+            </td>
+            <td style="padding:14px; color:#9ee49e;">🔒 Locked (6 Months)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Smart Contract Integrity -->
+    <h2 style="margin-top:2rem;">🧾 Smart Contract Integrity</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; margin:1rem 0;">
+      <div style="background: rgba(192,192,192,0.08); border:1px solid rgba(192,192,192,0.25); border-radius:14px; padding:1rem;">
+        <ul style="list-style:none; margin:0; padding:0; color:#e8e8e8; line-height:1.8;">
+          <li>✅ Fixed Total Supply: 300,000,000 LUMA</li>
+          <li>✅ No Mint Function: supply cannot be increased</li>
+          <li>✅ No Burn Function: transparent total supply</li>
+        </ul>
+      </div>
+      <div style="background: rgba(192,192,192,0.08); border:1px solid rgba(192,192,192,0.25); border-radius:14px; padding:1rem;">
+        <ul style="list-style:none; margin:0; padding:0; color:#e8e8e8; line-height:1.8;">
+          <li>✅ Renounced Ownership: contract is immutable</li>
+          <li>✅ No Hidden Fees/Taxes: 100% clean txs</li>
+          <li>✅ Manual Liquidity Additions Only</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Audit Plan -->
+    <div style="background: linear-gradient(135deg, rgba(192,192,192,0.12), rgba(255,255,255,0.06)); border:1px solid rgba(192,192,192,0.35); border-radius:18px; padding:1.5rem; margin:2rem 0; backdrop-filter: blur(10px);">
+      <h3 style="margin:0 0 .5rem 0; color:#fff;">🔍 Audit & Verification Plan</h3>
+      <p style="color:#d8d8d8; margin:0;">
+        The LUMA smart contract will undergo external audit review by a certified blockchain auditor during the final deployment of <strong>LumaNetwork</strong> (Phase 4).
+        Audit results and certificates will be published on this page.
+      </p>
+    </div>
+
+    <!-- Security Statement -->
+    <div style="background: rgba(255,255,255,0.05); border:1px solid rgba(192,192,192,0.25); border-left:4px solid #c0c0c0; border-radius:12px; padding:1.25rem 1.25rem 1.25rem 1rem; margin:2rem 0;">
+      <h3 style="margin:0 0 .5rem 0; color:#fff;">📢 Security Statement</h3>
+      <p style="color:#dcdcdc; margin:0;">
+        LUMA operates under a philosophy of open code, open liquidity, open governance. Every transaction, lock, and update is verifiable directly on-chain. Our goal is to ensure full investor confidence through transparency and public accountability.
+      </p>
+    </div>
+
+    <!-- Tips for Users -->
+    <h2 style="margin-top:2rem;">🧠 Tips for Users</h2>
+    <ul style="list-style:none; padding:0; margin:1rem 0; color:#eaeaea; line-height:1.9;">
+      <li>• Always verify contract addresses directly through PolygonScan.</li>
+      <li>• LUMA will never contact users first or ask for private keys/seed phrase.</li>
+      <li>• Use only official sources listed on our website and whitepaper.</li>
+    </ul>
+
+    <!-- Final Note -->
+    <div style="background:linear-gradient(135deg, rgba(192,192,192,0.14), rgba(255,255,255,0.08)); border:1px solid rgba(192,192,192,0.35); border-radius:16px; padding:1.25rem; margin:2rem 0; text-align:center;">
+      <strong style="color:#fff;">✨ Final Note:</strong>
+      <span style="color:#d6d6d6;"> This section is updated as new audits and locks are published. Stay tuned to our official channels for real-time transparency updates.</span>
+    </div>
+  </div>
+</div>
+
+     <!-- Roadmap Page -->
     <div id="roadmap" class="page">
         <div class="content-section">
             <h1>🗺️ LUMA ROADMAP</h1>
