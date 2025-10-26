@@ -1,0 +1,19 @@
+{
+  "name": "LumaChain Official Token List",
+  "timestamp": "2025-10-26T00:00:00+00:00",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tokens": [
+    {
+      "chainId": 137,
+      "address": "0x453453096e669a8a48772287210098faA55bd64b",
+      "name": "LumaChain",
+      "symbol": "LUMA",
+      "decimals": 18,
+      "logoURI": "https://lumachain.com.br/assets/luma_logo.png"
+    }
+  ]
+}
