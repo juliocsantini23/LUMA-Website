@@ -1,0 +1,38 @@
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+            <stop offset="25%" style="stop-color:#e8e8e8;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#c0c0c0;stop-opacity:1" />
+            <stop offset="75%" style="stop-color:#a0a0a0;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#808080;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="darkSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#404040;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1" />
+        </linearGradient>
+        <filter id="holyGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <circle cx="160" cy="160" r="110" fill="url(#silverGradient)" stroke="#ffffff" stroke-width="3" filter="url(#holyGlow)"/>
+    <circle cx="160" cy="160" r="90" fill="url(#darkSilver)" stroke="rgba(192,192,192,0.4)" stroke-width="1"/>
+    <text x="160" y="170" text-anchor="middle" fill="url(#textGradient)" font-size="36" font-weight="700" font-family="Arial, sans-serif" letter-spacing="3" filter="url(#textGlow)">LUMA</text>
+</svg>
