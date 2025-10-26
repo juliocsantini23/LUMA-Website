@@ -2776,7 +2776,8 @@ LumaChain is a next-generation decentralized finance platform built on Polygon..
     </script>
     <script>
 function downloadWhitepaper() {
-  const fileUrl = "https://www.lumachain.com.br/assets/LUMA_Whitepaper_v1.pdf";
+  // usa caminho relativo — mais confiável que domínio fixo
+  const fileUrl = "./assets/LUMA_Whitepaper_v1.pdf";
   window.open(fileUrl, "_blank");
 }
 </script>
