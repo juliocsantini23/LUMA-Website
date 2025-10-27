@@ -5,7 +5,7 @@
   "contract": "0x453453096e669a8a48772287210098faA55bd64b",
   "decimals": 18,
   "total_supply": 300000000,
-  "circulating_supply": 25992961.20,
+  "circulating_supply": 37100000,
   "last_updated": "2025-10-25T05:55:39Z",
   "notes": "Circulating supply updated progressively up to 70%.",
   "locks": {
@@ -30,7 +30,7 @@
     "explorers": [
       "https://polygonscan.com/token/0x453453096e669a8a48772287210098faA55bd64b",
       "https://dex.coinmarketcap.com/token/polygon/0x453453096e669a8a48772287210098faA55bd64b/",
-      "https://www.geckoterminal.com/polygon_pos/pools/0xebad4840bf2a7eeeb64918bb71f48ab9db4400ce"
     ]
   }
 }
+
